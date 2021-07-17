@@ -20,7 +20,13 @@ export class QuoteComponent implements OnInit {
     new Quote(5, 'History And Future', 'History should not be just a light to the past but a signal light to the future.', 'Sijin Bt', 'Danny Musonda'),
 
   new Quote(5, 'Man And Inhumanity', 'I am constantly amazed by mans inhumanity to man.', 'Primo Levi, If This Is a Man The Truce', 'Tino Livramento'),
-  ]
+  ];
+
+  addNewQuote(quote:any) {
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    this.quotes.push(quote);
+  }
 
   constructor() { }
 
