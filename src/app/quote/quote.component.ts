@@ -8,7 +8,7 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
 
-  quote: Quote[] = [
+  quotes: Quote[] = [
     new Quote(1,  'Lions and Hunting', 'Until the lions have their own historians, the history of the hunt will always glorify the hunter', 'Chinua Achebe', 'Armando Broja'  ),
 
     new Quote (2, 'Humans and Reality',  'Its funny how humans can wrap their mind around things and fit them into their version of reality.', 'Rick Riordan, The Lightning Thief', 'Spinazzola Fozza' ),
