@@ -1,7 +1,7 @@
 export class Quote {
-    id: number = 0;
-    quote:string = "";
-    description:string = "";
-    author: string = "";
-    submit_by: string = "";
+    
+    constructor(public id:number, public quote:string, public description: string, public author: string, public submit_by:string  ) {
+
+    }
 }
+
