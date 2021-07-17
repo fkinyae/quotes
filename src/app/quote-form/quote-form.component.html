@@ -4,7 +4,7 @@
         Add a Quote
     </h5>
 
-    <form action=""> 
+    <form (ngSubmit) = 'submitQuote()' #quoteForm = 'ngForm'> 
 
         <div class="tt">
             Enter Quote details:
@@ -12,28 +12,28 @@
 
         <div class="form-group" >
             <label for="quote-title" class="tt">Quote  Title</label>
-            <input type="text" class="form-control"  placeholder="Title of Your Quote">
+            <input type="text" class="form-control"  placeholder="Title of Your Quote"  id="quote" [(ngModel)] = "newQuote.quote" name= "quote"  required>
         </div>
 
         <div class="form-group" >
             <label for="quote" class="tt">Quote</label>
-            <input type="text" class="form-control"  placeholder="Enter Your Quote">
+            <input type="text" id="description" class="form-control"  placeholder="Enter Your Quote" [(ngModel)] = "newQuote.description" name= "description"  required>
         </div>
 
         <div class="form-group" >
             <label for="author" class="tt">Author</label>
-            <input type="text" class="form-control"  placeholder="Author of the Quote">
+            <input type="text" id="author" class="form-control"  placeholder="Author of the Quote" [(ngModel)] = "newQuote.author" name= "author"  required>
         </div>
 
         <div class="form-group" >
             <label for="name" class="tt">Your Name</label>
-            <input type="text" class="form-control"  placeholder="Your Name">
+            <input type="text" id="submit_by" class="form-control"  placeholder="Your Name" [(ngModel)] = "newQuote.submit_by" name= "Submit_by"  required>
         </div>
 
         <div  class="wrapper">
             <button id="addquote_btn" type="submit" class="btn btn-sm btn-success">Add Quote</button>
         </div>
-             
+            
     </form>
 
 </div>
