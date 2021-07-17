@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+ .container {
+    background-image: url("../../assets/images/invisiblepower.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Uchen', serif;
+}
+
+#mycards {
+    padding-left: 5%;
+}
+
+#vote {
+    float: right;
+}
