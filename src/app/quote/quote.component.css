@@ -8,6 +8,10 @@
     font-family: 'Uchen', serif;
 }
 
+h5 {
+    color: maroon;
+}
+
 #mycards {
     padding-left: 5%;
 }
