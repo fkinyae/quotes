@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Quote } from '../quote'
 
 @Component({
@@ -8,7 +8,17 @@ import { Quote } from '../quote'
 })
 export class QuoteDetailComponent implements OnInit {
 
-  @Input() quote: Quote = new Quote(0, "", "", "", "", new Date);
+  @Input() quote: Quote = new Quote(0, "", "", "", "", new Date, 0, 0);
+  @Output() isLike = new EventEmitter <boolean>();
+
+  upVote(){
+    this.quote.likes+=1;
+  }
+
+  downVote () {
+    
+    this.quote.dislikes+=1;
+  }
 
   constructor() { }
 
