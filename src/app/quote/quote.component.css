@@ -19,3 +19,11 @@ h5 {
 #vote {
     float: right;
 }
+
+#submitter {
+    float: left;
+}
+#submittern {
+    color: forestgreen;
+    font-style: italic;
+}
