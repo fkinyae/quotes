@@ -8,7 +8,7 @@
 
         <div *ngFor = 'let quote of quotes, let i = index;'> 
 
-        <div class="card bg-light mb-3" style="max-width: 28rem;">
+        <div class="card bg-light mb-3" style="max-width: 34rem;">
 
           <div class="card-header">  
             <h5 id={{i}}>{{quote.quote}}</h5> <button class="btn btn-primary" id="vote">See Details</button>
@@ -17,10 +17,24 @@
           <div class="card-body">
   
             <div class="card-title"> {{quote.description }} </div>
-  
-            <div class="card-text" id="submitter">
 
-             Presented By: <span id="submittern"> {{ quote.submit_by }} </span>
+            <div class="voter">
+
+
+
+            </div>
+  
+            <div class="card-text"  id="submitter">
+
+             Presented By: ~ <span id="submittern">  {{ quote.submit_by }}  </span>
+
+             On:~ <span id="date_posted"> {{quote.postDate}} </span>
+
+             <div id="author">
+
+                <app-quote-detail [quote]  = 'quote'></app-quote-detail>
+            
+             </div>
   
             </div>
           </div>
