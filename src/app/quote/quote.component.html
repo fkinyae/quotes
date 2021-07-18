@@ -10,8 +10,18 @@
 
         <div class="card bg-light mb-3" style="max-width: 34rem;">
 
-          <div class="card-header">  
-            <h5 id={{i}}>{{quote.quote}}</h5> <button class="btn btn-primary" id="vote">See Details</button>
+          <div class="card-header"> 
+            <div class="row">
+              <div class="col-md-6">
+                <h5 id={{i}}>{{quote.quote}}</h5>
+                Quote Posted <span id="date_posted">{{ quote.postDate|dateCount }} Days </span>Ago.
+              </div>
+              <div class="col-md-6">
+                <button class="btn btn-primary" id="vote">See Details</button>  
+              </div>
+
+            </div> 
+              
           </div>
   
           <div class="card-body">
