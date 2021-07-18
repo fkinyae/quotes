@@ -23,7 +23,11 @@ h5 {
 #submitter {
     float: left;
 }
+
 #submittern {
     color: forestgreen;
-    font-style: italic;
+}
+
+#date_posted {
+    color:  forestgreen;
 }
