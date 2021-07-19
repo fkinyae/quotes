@@ -28,6 +28,21 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote);
   }
  
+  toggleDetails(index:any ){
+    this.quotes[index].showDetails = !this.quotes[index].showDetails;
+  }
+
+  deleteQuote (isSeen:any , index:any) {
+    if (isSeen) {
+      let toDelete = confirm(`Are you sure you want to delete Quote about  ${this.quotes[index].quote} ? `)
+
+      if(toDelete){
+        this.quotes.splice(index,1);
+      }
+    }
+
+    
+  }
 
   constructor() { }
 
