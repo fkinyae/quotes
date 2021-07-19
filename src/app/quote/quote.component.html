@@ -1,14 +1,14 @@
-<div class="container">
-    <div class="jumbotron text-center" >
-        <h3>Welcome to Kin Quotes.</h3>
-    </div>
 
+<div class="container">
+  <div  id="welcome">
+      <h4>Welcome to Kin Quotes.</h4>
+  </div>
     <div class="row">
       <div class="col-md-8"  id="mycards">
 
         <div *ngFor = 'let quote of quotes, let i = index;'> 
 
-        <div class="card bg-light mb-3" style="max-width: 34rem;">
+        <div class="card bg-light mb-3" style="max-width: 38rem;">
 
           <div class="card-header"> 
             <div class="row">
@@ -17,7 +17,7 @@
                 Quote Posted <span id="date_posted">{{ quote.postDate|dateCount }} Days </span>Ago.
               </div>
               <div class="col-md-6">
-                <button class="btn btn-primary" id="vote">See Details</button>  
+                <button class="btn btn-primary" id="vote"  (click) = 'toggleDetails(i)'>See Details</button>  
               </div>
 
             </div> 
@@ -26,7 +26,7 @@
   
           <div class="card-body">
   
-            <div class="card-title"> {{quote.description }} </div>
+            <div class="card-title"  appHighlight> {{quote.description }} </div>
 
             <div class="voter">
 
@@ -42,7 +42,7 @@
 
              <div id="author">
 
-                <app-quote-detail [quote]  = 'quote'></app-quote-detail>
+                <app-quote-detail *ngIf = 'quote.showDetails' [quote]  = 'quote'   (isSeen)  = 'deleteQuote($event,i)'></app-quote-detail>
             
              </div>
   
@@ -56,6 +56,7 @@
         <div class="col-md-4" id="formquote">
 
           <app-quote-form (addQuote) = "addNewQuote($event)"></app-quote-form>
+          <app-quote-form ></app-quote-form>
           
 
         </div>
