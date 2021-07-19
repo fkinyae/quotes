@@ -10,6 +10,7 @@ export class QuoteDetailComponent implements OnInit {
 
   @Input() quote: Quote = new Quote(0, "", "", "", "", new Date, 0, 0);
   @Output() isLike = new EventEmitter <boolean>();
+  @Output() isSeen = new EventEmitter<boolean>();
 
   upVote(){
     this.quote.likes+=1;
@@ -18,6 +19,10 @@ export class QuoteDetailComponent implements OnInit {
   downVote () {
     
     this.quote.dislikes+=1;
+  }
+
+  quoteDelete (seen:boolean) {
+    this.isSeen.emit(seen);
   }
 
   constructor() { }
